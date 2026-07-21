@@ -13,7 +13,6 @@ function decorateAccordion(el) {
   });
 }
 
-debugger;
 const els = document.querySelectorAll('.accordion');
 els.forEach((el) => {
   decorateAccordion(el);
