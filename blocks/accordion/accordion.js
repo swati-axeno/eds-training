@@ -1,19 +1,23 @@
-function decorateAccordion(el) {
-  const titles = el.querySelectorAll(':scope > div:nth-child(odd)');
-  titles.forEach((title) => {
-    title.classList.add('item-title');
+/*
+ * Accordion Block
+ * Recreate an accordion
+ * https://www.hlx.live/developer/block-collection/accordion
+ */
 
-    title.querySelector(':scope > div:last-of-type').remove();
-
-    title.nextElementSibling.classList.add('item-content');
-
-    title.addEventListener('click', () => {
-      title.classList.toggle('open');
-    });
+export default function decorate(block) {
+  [...block.children].forEach((row) => {
+    // decorate accordion item label
+    const label = row.children[0];
+    const summary = document.createElement('summary');
+    summary.className = 'accordion-item-label';
+    summary.append(...label.childNodes);
+    // decorate accordion item body
+    const body = row.children[1];
+    body.className = 'accordion-item-body';
+    // decorate accordion item
+    const details = document.createElement('details');
+    details.className = 'accordion-item';
+    details.append(summary, body);
+    row.replaceWith(details);
   });
 }
-
-const els = document.querySelectorAll('.accordion');
-els.forEach((el) => {
-  decorateAccordion(el);
-});
