@@ -1,0 +1,72 @@
+.countries {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Dropdown */
+.countries select {
+  display: block;
+  min-width: 220px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: all .2s ease;
+}
+
+.countries select:hover {
+  border-color: #1473e6;
+}
+
+.countries select:focus {
+  border-color: #1473e6;
+  box-shadow: 0 0 0 3px rgba(20, 115, 230, .2);
+}
+
+/* Table */
+.countries table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+/* Header */
+.countries th {
+  background: #1473e6;
+  color: #fff;
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Cells */
+.countries td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #ececec;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Alternate row color */
+.countries tbody tr:nth-child(even) {
+  background: #f8f9fb;
+}
+
+/* Hover */
+.countries tbody tr:hover {
+  background: #eef6ff;
+}
+
+/* Remove border from last row */
+.countries tbody tr:last-child td {
+  border-bottom: none;
+}
