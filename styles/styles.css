@@ -300,21 +300,21 @@ main > .section {
   margin: 40px 0;
 }
 
-main > .section > div {
+/* main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
-}
+} */
 
 main > .section:first-of-type {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
+/* @media (width >= 900px) {
   main > .section > div {
     padding: 0 32px;
   }
-}
+} */
 
 /* section metadata */
 main .section.light,
@@ -327,3 +327,60 @@ main .section.highlight {
 main .pink{
   background-color: rgb(255, 220, 226);
 }
+
+.section.three-column.hero-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.section.three-column.hero-container > .default-content-wrapper {
+  display: contents;
+}
+
+.section.three-column.hero-container .default-content-wrapper p {
+  margin: 0;
+}
+
+.section.three-column.hero-container .default-content-wrapper picture,
+.section.three-column.hero-container .default-content-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.section.three-column.hero-container .hero.block {
+  min-height: auto;
+}
+.section.three-column.hero-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: center;
+
+  /* remove any inherited section padding/margin */
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.section.three-column.hero-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: stretch; /* was center — stretch makes all columns match height */
+}
+
+.section.three-column.hero-container > .default-content-wrapper {
+  display: contents;
+}
+
+/* let the hero fill its grid cell instead of using its own min-height */
+.section.three-column.hero-container .hero.block {
+  min-height: auto;
+  height: 100%;
+  align-items: center; /* keep text vertically centered inside the hero itself */
+}
+
