@@ -1,37 +1,99 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
-}
 
-.hero {
+.hero.block {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
-
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+ 
+/* background image row, converted to a full-bleed layer by hero.js */
+.hero.block .hero-image {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: 0;
+  margin: 0;
 }
-
-.hero img {
-  object-fit: cover;
+ 
+.hero.block .hero-image picture {
+  position: absolute;
+  inset: 0;
+}
+ 
+.hero.block .hero-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
-
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
+ 
+/* text content column, built by hero.js */
+.hero.block .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  padding: 0 40px;
+}
+ 
+.hero.block .hero-content h1 {
+  font-size: var(--heading-font-size-xxl, 45px);
+  font-weight: 600;
+  margin: 0 0 14px;
+  line-height: 1.05;
+}
+ 
+.hero.block .hero-content .hero-subtitle {
+  font-size: var(--heading-font-size-m, 22px);
+  font-weight: 400;
+  color: #4a4a4a;
+  margin: 0 0 32px;
+  line-height: 1.4;
+}
+ 
+.hero.block .hero-content .button-container {
+  margin: 0;
+}
+ 
+.hero.block .hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border: 1px solid var(--text-color, #0d0d0d);
+  background: transparent;
+  color: var(--text-color, #0d0d0d);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+ 
+.hero.block .hero-cta:hover,
+.hero.block .hero-cta:focus-visible {
+  background: var(--text-color, #0d0d0d);
+  color: #fff;
+}
+ 
+.hero.block .hero-cta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+ 
+@media (max-width: 900px) {
+  .hero.block {
+    min-height: 480px;
+    padding: 48px 0;
+    align-items: flex-start;
+  }
+ 
+  .hero.block .hero-content {
+    padding: 0 24px;
+    max-width: 100%;
+  }
+ 
+  .hero.block .hero-content h1 {
+    font-size: 34px;
   }
 }
