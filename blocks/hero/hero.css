@@ -60,7 +60,7 @@
   align-items: center;
   gap: 10px;
   padding: 14px 24px;
-  border: 1px solid var(--text-color, #0d0d0d);
+  border: 1.5px solid var(--text-color, #0d0d0d);
   background: transparent;
   color: var(--text-color, #0d0d0d);
   font-size: 16px;
@@ -71,8 +71,9 @@
  
 .hero.block .hero-cta:hover,
 .hero.block .hero-cta:focus-visible {
-  background: var(--text-color, #0d0d0d);
-  color: #fff;
+  /* background: var(--text-color, #0d0d0d); */
+  /* color: #fff; */
+  border: 1.5px solid grey;
 }
  
 .hero.block .hero-cta svg {
@@ -96,4 +97,56 @@
   .hero.block .hero-content h1 {
     font-size: 34px;
   }
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border: 1px solid #000;
+  /* background: transparent; */
+  color: #000;
+  text-decoration: none;
+  transition: border-color .3s ease;
+}
+
+.hero-cta:hover {
+  border-color: #7a7a7a;
+}
+
+.arrow-wrapper {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  transition: transform .35s ease;
+}
+
+.arrow polyline {
+  stroke: currentColor;
+}
+
+.arrow-current {
+  transform: translateX(0);
+}
+
+.arrow-next {
+  transform: translateX(-22px);
+}
+
+.hero-cta:hover .arrow-current {
+  transform: translateX(22px);
+}
+
+.hero-cta:hover .arrow-next {
+  transform: translateX(0);
 }
