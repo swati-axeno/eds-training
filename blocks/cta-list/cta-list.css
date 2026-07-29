@@ -1,7 +1,8 @@
 /* large variant */
 .cta-list-container{
     align-items: center;
-    margin-left: 5rem;
+    
+    margin-left: 8rem;
 }
 .cta-list.large .cta-item {
     display: grid;
@@ -24,7 +25,7 @@
 
 
 .cta-list.large .cta-icon {
-    width: 457px;
+    width: 394px;
     height: 57px;
 }
 

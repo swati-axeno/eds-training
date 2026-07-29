@@ -3,6 +3,7 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+
 .cards.arrow-icon > div {
     display: flex;
     flex-direction: column;
