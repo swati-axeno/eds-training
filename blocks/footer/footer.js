@@ -1,20 +1,37 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
+const ARROW_ICON = `
+ <span class="arrow-wrapper">
+      <svg class="arrow arrow-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 12H19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path>
+        <path d="M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></path>
+      </svg>
 
-/**
- * loads and decorates the footer
- * @param {Element} block The footer block element
- */
-export default async function decorate(block) {
-  // load footer as fragment
-  const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
-  const fragment = await loadFragment(footerPath);
+      <svg class="arrow arrow-next" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 12H19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path>
+        <path d="M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></path>
+      </svg>
+    </span>
+  `;
+// const ARROW_ICON = `...`;
 
-  // decorate footer DOM
-  block.textContent = '';
-  const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+export default function decorate(block) {
+  const columns = [...block.children];
 
-  block.append(footer);
+  if (!columns.length) return;
+
+  block.classList.add('footer-top');
+
+  // Newsletter
+  const newsletter = columns.shift();
+  newsletter.classList.add('footer-newsletter');
+
+  const button = newsletter.querySelector('a');
+  if (button) {
+    button.classList.add('footer-button');
+    button.insertAdjacentHTML('beforeend', ARROW_ICON);
+  }
+
+  // Every remaining column is a footer nav
+  columns.forEach((column) => {
+    column.classList.add('footer-nav');
+  });
 }
