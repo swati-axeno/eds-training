@@ -1,22 +1,32 @@
+/* ===========================
+   Header
+=========================== */
+
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
+  gap:17.6rem;
   max-width: 1600px;
-  margin: 0 auto;
+  margin: 2px 0px 5px 36px !important;
+  margin: 8px auto;
+  /* padding: 6px 36px 11px; */
 
-  padding: 0 0 11px 36px;
   background: #fff;
 }
 
 /* ===========================
    Logo
 =========================== */
+/* header nav .nav-brand img {
+    width: 115px;
+    height: auto;
+} */
 
 .header-logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .header-logo p {
@@ -25,12 +35,14 @@
 
 .header-logo a {
   display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.header-logo img {
-  width: auto;
-  height: 32px;
-  display: block;
+
+header nav .nav-brand img {
+    width: 113px;
+    height: auto;
 }
 
 /* ===========================
@@ -40,7 +52,10 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 48px;
+  justify-content: space-between;
+ gap:1rem;
+  flex: 1;
+     margin: 3px 0px 0px 80px;
 }
 
 /* ===========================
@@ -50,21 +65,30 @@
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 23px;
+  flex-wrap: nowrap;
 }
 
 .header-nav p {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 450;
+    font-family: roboto, sans-serif;
+     margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    font-weight: 500;
+}
+.header-nav p:hover {
+    color:grey;
+    cursor: pointer;
 }
 
+
 .header-nav a {
+  display: block;
   text-decoration: none;
   color: #000;
   font-size: 16px;
   font-weight: 500;
-  transition: opacity .25s;
+  white-space: nowrap;
 }
 
 .header-nav a:hover {
@@ -72,13 +96,15 @@
 }
 
 /* ===========================
-   Action Icons
+   Actions
 =========================== */
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 9px;
+  flex-shrink: 0;
+  
 }
 
 .header-actions p {
@@ -89,11 +115,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width:1.5rem;
 }
 
 .header-actions img {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   display: block;
 }
 
@@ -116,6 +143,6 @@
   }
 
   .header-right {
-    gap: 20px;
+    justify-content: flex-end;
   }
 }
