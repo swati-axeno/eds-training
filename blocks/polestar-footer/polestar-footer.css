@@ -239,9 +239,35 @@ font-size: 0.75rem;
 .polestar-footer .arrow-next {
   transform: translateX(-22px);
 }
+/* ===========================
+   Footer Global
+=========================== */
 
-#global > a{
-        margin-left: 28rem;
+.polestar-footer-container .default-content-wrapper {
+  display: flex;
+  align-items: center;
 }
 
+.polestar-footer-container .default-content-wrapper p:last-child {
+  margin-left: auto;
+}
 
+.footer-global {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer-global img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.footer-global:hover {
+  text-decoration: underline;
+}

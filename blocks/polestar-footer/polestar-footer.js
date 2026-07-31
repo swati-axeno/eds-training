@@ -11,7 +11,8 @@ const ARROW_ICON = `
       </svg>
     </span>
   `;
-// const ARROW_ICON = `...`;
+
+const GLOBE = '/icons/globe.svg';
 
 export default function decorate(block) {
   const columns = [...block.children];
@@ -34,4 +35,18 @@ export default function decorate(block) {
   columns.forEach((column) => {
     column.classList.add('footer-nav');
   });
+  /* ---------------- Global ---------------- */
+
+const globalLink = document.querySelector(
+  '.polestar-footer-container .default-content-wrapper p:last-child a',
+);
+console.log(globalLink)
+if (globalLink) {
+  globalLink.classList.add('footer-global');
+
+  globalLink.innerHTML = `
+    <img src="${GLOBE}" alt="Global">
+    <span>Global</span>
+  `;
+}
 }
