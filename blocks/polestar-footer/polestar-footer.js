@@ -11,7 +11,6 @@ const ARROW_ICON = `
       </svg>
     </span>
   `;
-
 const GLOBE = '/icons/globe.svg';
 
 export default function decorate(block) {
@@ -31,14 +30,12 @@ export default function decorate(block) {
     button.insertAdjacentHTML('beforeend', ARROW_ICON);
   }
 
-  // Every remaining column is a footer nav
-  columns.forEach((column) => {
-    column.classList.add('footer-nav');
-  });
-  /* ---------------- Global ---------------- */
+    /* ---------------- Global ---------------- */
 
-const globalLink = document.querySelector(
-  '.polestar-footer-container .default-content-wrapper p:last-child a',
+const footerSection = block.closest('.polestar-footer-container');
+
+const globalLink = footerSection?.querySelector(
+  '.default-content-wrapper a[title="Global"]'
 );
 console.log(globalLink)
 if (globalLink) {
@@ -49,4 +46,9 @@ if (globalLink) {
     <span>Global</span>
   `;
 }
+  
+  // Every remaining column is a footer nav
+  columns.forEach((column) => {
+    column.classList.add('footer-nav');
+  });
 }
