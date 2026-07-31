@@ -1,0 +1,121 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1600px;
+  margin: 0 auto;
+
+  padding: 0 0 11px 36px;
+  background: #fff;
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo p {
+  margin: 0;
+}
+
+.header-logo a {
+  display: flex;
+}
+
+.header-logo img {
+  width: auto;
+  height: 32px;
+  display: block;
+}
+
+/* ===========================
+   Right Section
+=========================== */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.header-nav p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 450;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  transition: opacity .25s;
+}
+
+.header-nav a:hover {
+  opacity: .7;
+}
+
+/* ===========================
+   Action Icons
+=========================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-actions p {
+  margin: 0;
+}
+
+.header-actions a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-actions img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.header-actions a:hover {
+  opacity: .7;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 991px) {
+
+  .header {
+    padding: 18px 24px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-right {
+    gap: 20px;
+  }
+}
