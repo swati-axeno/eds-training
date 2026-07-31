@@ -92,6 +92,9 @@ header .header,
 footer .footer {
   visibility: hidden;
 }
+footer .footer{
+height: 522px;
+}
 
 header .header[data-block-status="loaded"],
 footer .footer[data-block-status="loaded"] {

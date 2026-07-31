@@ -9,7 +9,7 @@
   grid-template-columns: 360px 1fr;
   gap: 5px;
   border-bottom: 1px solid grey;
-  padding: 46px 0;
+  padding: 46px 0px 89px;
   background: rgb(240, 240, 240);
 }
 
